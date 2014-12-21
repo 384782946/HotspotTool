@@ -80,6 +80,14 @@ void QGraphicsWindow::InitToolbar()
         m_pDrawToolbar->addAction(ui->action_circle);
         m_pDrawToolbar->addAction(ui->action_polygon);
 
+        QActionGroup* ag = new QActionGroup(this);
+        ag->addAction(ui->action_select);
+        ag->addAction(ui->action_move);
+        ag->addAction(ui->action_scale1);
+        ag->addAction(ui->action_rect);
+        ag->addAction(ui->action_circle);
+        ag->addAction(ui->action_polygon);
+
         addToolBar(Qt::LeftToolBarArea,m_pDrawToolbar);
 
         ui->action_select->setChecked(true);
@@ -141,20 +149,12 @@ void QGraphicsWindow::on_action_rect_triggered()
 {
     if(ui->action_rect->isChecked())
     {
-        ui->action_circle->setChecked(false);
-        ui->action_move->setChecked(false);
-        ui->action_select->setChecked(false);
-        ui->action_rect->setChecked(true);
-        ui->action_scale1->setChecked(false);
-        ui->action_polygon->setChecked(false);
-
         m_MainView->m_Mode = QMyView::DRAW_MODE_RECT;
 		m_MainView->setFocus();
     }
     else
     {
         m_MainView->m_Mode = QMyView::DRAW_MODE_SELECT;
-        ui->action_rect->setChecked(false);
     }
 }
 
@@ -162,13 +162,6 @@ void QGraphicsWindow::on_action_circle_triggered()
 {
     if(ui->action_circle->isChecked())
     {
-        ui->action_rect->setChecked(false);
-        ui->action_move->setChecked(false);
-        ui->action_select->setChecked(false);
-        ui->action_circle->setChecked(true);
-        ui->action_scale1->setChecked(false);
-        ui->action_polygon->setChecked(false);
-
         m_MainView->m_Mode = QMyView::DRAW_MODE_CIRCLE;
 		m_MainView->setFocus();
     }
@@ -183,13 +176,6 @@ void QGraphicsWindow::on_action_move_triggered()
 {
     if(ui->action_move->isChecked())
     {
-        ui->action_circle->setChecked(false);
-        ui->action_rect->setChecked(false);
-        ui->action_select->setChecked(false);
-        ui->action_move->setChecked(true);
-        ui->action_scale1->setChecked(false);
-        ui->action_polygon->setChecked(false);
-
         m_MainView->m_Mode = QMyView::DRAW_MODE_MOVE;
 		m_MainView->setFocus();
     }
@@ -204,13 +190,6 @@ void QGraphicsWindow::on_action_select_triggered()
 {
     if(ui->action_select->isChecked())
     {
-        ui->action_circle->setChecked(false);
-        ui->action_move->setChecked(false);
-        ui->action_rect->setChecked(false);
-        ui->action_select->setChecked(true);
-        ui->action_scale1->setChecked(false);
-        ui->action_polygon->setChecked(false);
-
         m_MainView->m_Mode = QMyView::DRAW_MODE_SELECT;
 		m_MainView->setFocus();
     }
@@ -225,13 +204,6 @@ void QGraphicsWindow::on_action_scale1_triggered()
 {
     if(ui->action_scale1->isChecked())
     {
-        ui->action_circle->setChecked(false);
-        ui->action_move->setChecked(false);
-        ui->action_rect->setChecked(false);
-        ui->action_select->setChecked(false);
-        ui->action_polygon->setChecked(false);
-        ui->action_scale1->setChecked(true);
-
         m_MainView->m_Mode = QMyView::DRAW_MODE_SCALE;
 		m_MainView->setFocus();
     }
@@ -246,13 +218,6 @@ void QGraphicsWindow::on_action_polygon_triggered()
 {
     if(ui->action_polygon->isChecked())
     {
-          ui->action_circle->setChecked(false);
-          ui->action_move->setChecked(false);
-          ui->action_rect->setChecked(false);
-          ui->action_select->setChecked(false);
-          ui->action_scale1->setChecked(false);
-          ui->action_polygon->setChecked(true);
-
           m_MainView->m_Mode = QMyView::DRAW_MODE_POLYGON;
 		  m_MainView->setFocus();
      }

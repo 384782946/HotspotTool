@@ -9,6 +9,7 @@
 #include <QWheelEvent>
 #include "qmyview.h"
 #include <QPushButton>
+#include <QActionGroup>
 
 namespace Ui {
 class QGraphicsWindow;
