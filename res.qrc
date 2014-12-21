@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>image/close.bmp</file>
+        <file>image/cursor-arrow.png</file>
+        <file>image/cursor-sizeall.png</file>
+        <file>image/open.bmp</file>
+        <file>image/rect.png</file>
+        <file>image/save.bmp</file>
+        <file>image/yuan.png</file>
+        <file>image/zoomin.bmp</file>
+        <file>image/zoomout.bmp</file>
+        <file>image/image.bmp</file>
+        <file>image/saveas.bmp</file>
+        <file>image/scale1.png</file>
+        <file>image/scale2.png</file>
+        <file>image/copy.png</file>
+        <file>image/paste.png</file>
+        <file>image/polygon.png</file>
+    </qresource>
+</RCC>

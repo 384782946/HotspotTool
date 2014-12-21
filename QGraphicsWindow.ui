@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QGraphicsWindow</class>
+ <widget class="QMainWindow" name="QGraphicsWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>热区绘制工具</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action_open"/>
+    <addaction name="action_load"/>
+    <addaction name="action_save"/>
+    <addaction name="action_saveAs"/>
+    <addaction name="action_close"/>
+    <addaction name="separator"/>
+    <addaction name="action_recentlyOpen"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>视图</string>
+    </property>
+    <addaction name="action_view1"/>
+    <addaction name="action_view2"/>
+    <addaction name="action_view3"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_open">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/image.bmp</normaloff>:/new/prefix1/image/image.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>加载图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/save.bmp</normaloff>:/new/prefix1/image/save.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_saveAs">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/saveas.bmp</normaloff>:/new/prefix1/image/saveas.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>另存为</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="action_close">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/close.bmp</normaloff>:/new/prefix1/image/close.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </action>
+  <action name="action_recentlyOpen">
+   <property name="text">
+    <string>最近打开的文件</string>
+   </property>
+  </action>
+  <action name="action_zoomin">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/zoomout.bmp</normaloff>:/new/prefix1/image/zoomout.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>放大</string>
+   </property>
+   <property name="toolTip">
+    <string>放大</string>
+   </property>
+  </action>
+  <action name="action_zoomout">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/zoomin.bmp</normaloff>:/new/prefix1/image/zoomin.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>缩小</string>
+   </property>
+   <property name="toolTip">
+    <string>缩小</string>
+   </property>
+  </action>
+  <action name="action_select">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/cursor-arrow.png</normaloff>:/new/prefix1/image/cursor-arrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>选取</string>
+   </property>
+   <property name="toolTip">
+    <string>选取绘图对象</string>
+   </property>
+  </action>
+  <action name="action_move">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/cursor-sizeall.png</normaloff>:/new/prefix1/image/cursor-sizeall.png</iconset>
+   </property>
+   <property name="text">
+    <string>移动</string>
+   </property>
+   <property name="toolTip">
+    <string>移动绘图对象</string>
+   </property>
+  </action>
+  <action name="action_rect">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/rect.png</normaloff>:/new/prefix1/image/rect.png</iconset>
+   </property>
+   <property name="text">
+    <string>矩形</string>
+   </property>
+  </action>
+  <action name="action_circle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/yuan.png</normaloff>:/new/prefix1/image/yuan.png</iconset>
+   </property>
+   <property name="text">
+    <string>圆形</string>
+   </property>
+  </action>
+  <action name="action_load">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/open.bmp</normaloff>:/new/prefix1/image/open.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>载入xml</string>
+   </property>
+   <property name="toolTip">
+    <string>载入xml文件</string>
+   </property>
+  </action>
+  <action name="action_scale1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/scale2.png</normaloff>:/new/prefix1/image/scale2.png</iconset>
+   </property>
+   <property name="text">
+    <string>放大</string>
+   </property>
+   <property name="toolTip">
+    <string>放大选区</string>
+   </property>
+  </action>
+  <action name="action_view1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>文件工具栏</string>
+   </property>
+  </action>
+  <action name="action_view2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>绘图工具栏</string>
+   </property>
+  </action>
+  <action name="action_view3">
+   <property name="text">
+    <string>属性窗口</string>
+   </property>
+   <property name="toolTip">
+    <string>属性窗口</string>
+   </property>
+  </action>
+  <action name="action_polygon">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/new/prefix1/image/polygon.png</normaloff>:/new/prefix1/image/polygon.png</iconset>
+   </property>
+   <property name="text">
+    <string>polygon</string>
+   </property>
+   <property name="toolTip">
+    <string>多边形</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
